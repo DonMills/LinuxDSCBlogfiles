@@ -74,7 +74,7 @@
   "variables": {
     "api-version": "2017-10-01",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
-    "subnetRef": "[concat(variables('vnetID'),'/',parameters('subnetName'))]",
+    "subnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('subnetName'))]",
     "vmStorageAccountContainerName": "vhds",
     "storageAccountType": "Standard_LRS",
     "imagePublisher": "Canonical",
