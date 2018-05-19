@@ -74,7 +74,7 @@
   "variables": {
     "api-version": "2017-10-01",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
-    "subnetRef": "[concat(variables('vnetID'),parameters('subnetName'))]",
+    "subnetRef": "[concat(variables('vnetID'),'/',parameters('subnetName'))]",
     "vmStorageAccountContainerName": "vhds",
     "storageAccountType": "Standard_LRS",
     "imagePublisher": "Canonical",
@@ -157,7 +157,7 @@
       "name": "[parameters('vmName')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[concat('Microsoft.Network/networkInterfaces/', concat(parameters('vmName'),'-nic'))]"
+        "[concat('Microsoft.Network/networkInterfaces/', concat(parameters('vmName'),'-nic') )]"
       ],
       "properties": {
         "hardwareProfile": {
