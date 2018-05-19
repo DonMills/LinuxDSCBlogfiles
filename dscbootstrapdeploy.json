@@ -144,7 +144,7 @@
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[concat('Microsoft.Network/publicIPAddresses/', variables('pubipname'))]",
-        "[concat('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
+        "[concat('Microsoft.Network/networkSecurityGroups/', variables('networkSecurityGroupName'))]"
       ],
       "properties": {
         "ipConfigurations": [
