@@ -1,5 +1,6 @@
 # LinuxDSCBlogfiles
-Several templates and powershell DSC configurations for a blog series on Medium about "Bootstrapping Linux vms with DSC in Azure"
+Several templates and powershell DSC configurations for a blog series on Medium about "Bootstrapping Linux vms with DSC in Azure".
+
 Links to the blogs:
 
 Part 1: https://medium.com/@don.mills/bootstrapping-linux-vms-with-dsc-in-azure-2145f2beb30
