@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "username": {
+     "value": "dmills"
+   },
+   "password": {
+     "value": "Th1sIs4utom4tion!"
+   },
+   "vmName": {
+     "value": "DSCLinuxTestNode2"
+   },
+   "NodeConfigName": {
+     "value": "dsctestlinux.dscwebserver"
+   },
+   "ubuntuOSVersion": {
+     "value": "16.04-LTS"
+   },
+   "registrationUrl": {
+     "value": "https://eus2-agentservice-prod-1.azure-automation.net/accounts/cc5ed905-a196-425e-8adf-aa3f5c818dd1"
+   },
+   "registrationKey": {
+     "value": "nDTvzZZcYdRdA08GVFvYEgaJW30mI3havwJyt1W3V+STw8rXBb1EG1BS8C35Jxx64pwOqH3iMnzhebs1yR4U0w=="
+   },
+   "virtualNetworkName": {
+     "value": "DRMTest-vnet"
+   },
+   "subnetName": {
+     "value": "default-drm"
+   },
+   "storageAcct": {
+     "value": "drmtestdiskstorage"
+   },
+   "virtualNetworkResourceGroup":{
+     "value": "DSCTest"
+   }
+ }
+}

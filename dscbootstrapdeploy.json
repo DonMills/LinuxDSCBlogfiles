@@ -69,11 +69,17 @@
       "metadata": {
         "description": "The  blob storage account that holds the os disk"
       }
+    },
+    "virtualNetworkResourceGroup":{
+      "type": "string",
+      "metadata": {
+        "description": "The resource group that holds the vnet you are deploying to"
+      }
     }
   },
   "variables": {
     "api-version": "2017-10-01",
-    "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
+    "vnetID": "[resourceId(parameters('virtualNetworkResourceGroup'),'Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('subnetName'))]",
     "vmStorageAccountContainerName": "vhds",
     "storageAccountType": "Standard_LRS",
