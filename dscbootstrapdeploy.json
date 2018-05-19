@@ -86,7 +86,8 @@
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
     "OSDiskName": "osdiskfordsctest",
-    "pubipname": "[concat(parameters('vmName'),'-pubip')]"
+    "pubipname": "[concat(parameters('vmName'),'-pubip')]",
+    "networkSecurityGroupName": "[concat(parameters('vmName'),'-nsg')]"
   },
   "resources": [
     {
@@ -122,6 +123,7 @@
           }
         ],
         "networkSecurityGroup": {
+          "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]",
           "properties": {
             "securityRules": [
             {
