@@ -101,6 +101,43 @@
     },
     {
       "apiVersion": "2017-10-01",
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "name": "[variables('networkSecurityGroupName')]",
+      "properties": {
+        "securityRules": [
+        {
+          "name": "AllowInboundSSH",
+          "properties": {
+            "description": "Allows SSH inbound",
+            "protocol": "Tcp",
+            "sourcePortRange": "*",
+            "destinationPortRange": "22",
+            "sourceAddressPrefix": "*",
+            "destinationAddressPrefix": "*",
+            "access": "Allow",
+            "priority": 100,
+            "direction": "Inbound"
+          }
+        },
+        {
+          "name": "AllowInboundHTTP",
+          "properties": {
+            "description": "Allows HTTP inbound",
+            "protocol": "Tcp",
+            "sourcePortRange": "*",
+            "destinationPortRange": "80",
+            "sourceAddressPrefix": "*",
+            "destinationAddressPrefix": "*",
+            "access": "Allow",
+            "priority": 110,
+            "direction": "Inbound"
+          }
+        }
+      ]
+     }
+    },
+    {
+      "apiVersion": "2017-10-01",
       "type": "Microsoft.Network/networkInterfaces",
       "name": "[concat(parameters('vmName'),'-nic')]",
       "location": "[resourceGroup().location]",
@@ -123,39 +160,7 @@
           }
         ],
         "networkSecurityGroup": {
-          "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]",
-          "properties": {
-            "securityRules": [
-            {
-              "name": "AllowInboundSSH",
-              "properties": {
-                "description": "Allows SSH inbound",
-                "protocol": "Tcp",
-                "sourcePortRange": "*",
-                "destinationPortRange": "22",
-                "sourceAddressPrefix": "*",
-                "destinationAddressPrefix": "*",
-                "access": "Allow",
-                "priority": 100,
-                "direction": "Inbound"
-              }
-            },
-            {
-              "name": "AllowInboundHTTP",
-              "properties": {
-                "description": "Allows HTTP inbound",
-                "protocol": "Tcp",
-                "sourcePortRange": "*",
-                "destinationPortRange": "80",
-                "sourceAddressPrefix": "*",
-                "destinationAddressPrefix": "*",
-                "access": "Allow",
-                "priority": 110,
-                "direction": "Inbound"
-              }
-            }
-          ]
-        }
+          "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
       }
     }
     },
