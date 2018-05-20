@@ -234,7 +234,7 @@
   ],
   "outputs": {
     "ipaddress": {
-        "value": "[reference(variables('pubipname')).ipAddress]",
+        "value": "[reference(variables('pubipname')).IpAddress]",
         "type": "string"
     }
   }
