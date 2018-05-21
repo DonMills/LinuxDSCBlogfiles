@@ -40,14 +40,12 @@
     },
     "registrationUrl": {
       "type": "string",
-      "defaultValue": "https://eus2-agentservice-prod-1.azure-automation.net/accounts/ae26dd91-2259-4357-8499-b9c4c66b4700",
       "metadata": {
         "description": "The URL of the Azure Automation account"
       }
     },
     "registrationKey": {
       "type": "string",
-      "defaultValue": "Ld29hzk+UjV35Rxm0Qb98HFhtAJJuMRGymgU8yIUwTQ6ImLDm8KMYNWLygyARTD6tHIPMoVdB6jwrz1mAoImfA==",
       "metadata": {
         "description": "The access key of the Azure Automation account"
       }
